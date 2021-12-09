@@ -3,6 +3,7 @@ import ItemsDetailMovie from "./ItemsDetailMovie";
 import { useDispatch, useSelector } from "react-redux";
 import { getDetailMovie } from "../redux/actions";
 import { Link, useLocation } from "react-router-dom";
+import TextArea from "./TextArea";
 
 export default function DetailMovie() {
   const id = useLocation().search;
@@ -12,6 +13,7 @@ export default function DetailMovie() {
 
   useEffect(() => {
     dispatch(getDetailMovie(movie_id));
+    console.log("Coba =>", detailMovie);
   }, [dispatch]);
   return (
     <div>
@@ -63,22 +65,30 @@ export default function DetailMovie() {
                     </div>
                   </div>
                   <div class="card-body">
-                    {/* <ItemsDetailMovie
+                    <ItemsDetailMovie
                       label="Title Movie"
-                      value={detailMovie.original_title}
+                      value={detailMovie ? detailMovie.original_title : ""}
+                    />
+                    <TextArea
+                      label="Overview Movie"
+                      value={detailMovie ? detailMovie.overview : ""}
                     />
                     <ItemsDetailMovie
-                      label="Overview Movie"
-                      value={detailMovie.overview}
+                      label="Tagline Movie"
+                      value={detailMovie ? detailMovie.tagline : ""}
                     />
                     <ItemsDetailMovie
                       label="Status Movie"
-                      value={detailMovie.status}
-                    /> */}
-                    <ItemsDetailMovie label="Title Movie" value="Halo guys" />
-                    <ItemsDetailMovie label="Title Movie" value="Halo guys" />
-                    <ItemsDetailMovie label="Title Movie" value="Halo guys" />
-                    <ItemsDetailMovie label="Title Movie" value="Halo guys" />
+                      value={detailMovie ? detailMovie.status : ""}
+                    />
+                    <ItemsDetailMovie
+                      label="Popularity Movie"
+                      value={detailMovie ? detailMovie.popularity : ""}
+                    />
+                    <ItemsDetailMovie
+                      label="Release Date"
+                      value={detailMovie ? detailMovie.release_date : ""}
+                    />
                   </div>
                 </div>
               </div>
