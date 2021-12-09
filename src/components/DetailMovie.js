@@ -13,7 +13,6 @@ export default function DetailMovie() {
 
   useEffect(() => {
     dispatch(getDetailMovie(movie_id));
-    console.log("Coba =>", detailMovie);
   }, [dispatch]);
   return (
     <div>

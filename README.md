@@ -15,7 +15,7 @@ This project is a technical test from Qoin Digital Indonesia
 - [Redux](https://redux.js.org/)
 - [Ant Design](https://ant.design/)
 
-## License - TEAM Sky Router
+## Author
 
 © [Renaldi Pratama Tumanggor](https://github.com/renaldipratama97)<br>
 
