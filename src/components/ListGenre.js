@@ -80,7 +80,7 @@ export default function ListGenre() {
                     {loading ? (
                       <Spin />
                     ) : (
-                      <Table dataSource={data} columns={columns} />
+                      <Table dataSource={data} columns={columns} pagination={{pageSize: data.length}} />
                     )}
                   </div>
                 </div>
