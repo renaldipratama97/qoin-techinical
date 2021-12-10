@@ -7,6 +7,7 @@ export default function ItemsDetailMovie({ label, value }) {
       <label>{label}</label>
       <Input value={value} disabled />
       <br />
+      <br />
     </div>
   );
 }

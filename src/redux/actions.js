@@ -1,5 +1,7 @@
 import axios from "axios";
 
+const { REACT_APP_MOVIE } = process.env;
+
 export const GET_MOVIE_LIST = "GET_MOVIE_LIST";
 export const GET_GENRE_LIST = "GET_GENRE_LIST";
 export const GET_DETAIL_MOVIE = "GET_DETAIL_MOVIE";
@@ -19,7 +21,7 @@ const getMovieList = () => {
     //Get Movie
     axios
       .get(
-        `https://api.themoviedb.org/3/movie/upcoming?api_key=2fccde01a371b106b09a241d6d1d5b49&page=1`
+        `${REACT_APP_MOVIE}/movie/upcoming?api_key=2fccde01a371b106b09a241d6d1d5b49&page=1`
       )
       .then((res) => {
         dispatch({
@@ -58,7 +60,7 @@ const getGenreList = () => {
     //Get Genre
     axios
       .get(
-        `https://api.themoviedb.org/3/genre/movie/list?api_key=2fccde01a371b106b09a241d6d1d5b49`
+        `${REACT_APP_MOVIE}/genre/movie/list?api_key=2fccde01a371b106b09a241d6d1d5b49`
       )
       .then((res) => {
         console.log(res.data.genres);
@@ -98,7 +100,7 @@ const getDetailMovie = (movie_id) => {
     //Get Genre
     axios
       .get(
-        `https://api.themoviedb.org/3/movie/${movie_id}?api_key=2fccde01a371b106b09a241d6d1d5b49`
+        `${REACT_APP_MOVIE}/movie/${movie_id}?api_key=2fccde01a371b106b09a241d6d1d5b49`
       )
       .then((res) => {
         dispatch({

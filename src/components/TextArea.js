@@ -8,6 +8,7 @@ export default function TextAreaComponent({ label, value }) {
       <label>{label}</label>
       <TextArea value={value} rows={4} disabled />
       <br />
+      <br />
     </div>
   );
 }
